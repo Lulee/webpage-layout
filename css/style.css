@@ -14,53 +14,175 @@ li {
 }
 a {
   text-decoration: none;
+  color: #8593a5;
+  font-size: 14px;
 }
+
+a:hover {
+  color: #3573fb;
+}
+
 /* 顶部样式开始 */
 .header {
   width: 100%;
   height: 40px;
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid #eff2f7;
 }
 .header-wrap {
   height: 40px;
   width: 96%;
   margin: 0px auto;
-  border: 1px solid red;
+  font-size: 14px;
+  color: #8593a5;
+  /* border: 1px solid red; */
 }
+/* 顶部左侧样式开始 */
 .header-left {
-  width: 200px;
+  width: 270px;
   height: 40px;
   float: left;
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }
-.header-right {
+.header-left > div:first-child {
+  float: left;
+  padding: 8px 10px 8px 0px;
+}
+.header-left > div:first-child > span {
+  font-weight: bold;
+}
+.header-left > div:last-child {
+  float: right;
+  padding: 8px 0px;
+  position: relative;
+}
+
+.header-left > div:last-child > a > img {
+  width: 21px;
+  float: left;
+  margin-top: 2px;
+  margin-right: 3px;
+}
+
+.header-nav {
+  position: absolute;
   width: 200px;
+  background-color: #fff;
+  border: 1px solid #eff2f7;
+  top: 41px;
+  left: -20px;
+  z-index: 999;
+  visibility: hidden;
+}
+/* 鼠标悬停显示 header-nav */
+.header-left > div:last-child:hover > .header-nav {
+  visibility: visible;
+}
+
+/* 纯CSS实现小尖角 */
+.header-nav > i {
+  position: absolute;
+  top: -8px;
+  left: 35px;
+  color: #fff;
+  text-shadow: 1px -1px #eff2f7, -1px -1px #eff2f7;
+}
+/* 纯CSS实现小尖角 end*/
+
+.header-nav li {
+  height: 56px;
+  padding: 8px 16px;
+}
+.header-nav li:hover {
+  background-color: #fafbfe;
+}
+
+.header-nav li > a {
+  color: #8593a5;
+}
+.header-nav li > a > img {
+  width: 40px;
+  height: 40px;
+  float: left;
+}
+.header-nav li > a > span {
+  float: right;
+  padding: 10px;
+}
+/* 顶部左侧样式结束 */
+/* 顶部右侧样式 开始*/
+.header-right {
+  width: 250px;
   float: right;
   height: 40px;
-  border: 1px solid green;
 }
+.header-right > ul {
+  float: right;
+}
+.header-right > ul > li {
+  float: left;
+  padding: 8px 10px;
+  position: relative;
+}
+.header-right > ul > li:first-child > a:last-of-type {
+  margin-left: 10px;
+}
+
+.header-right img {
+  width: 17px;
+  height: 17px;
+  float: left;
+  margin-top: 2px;
+  margin-right: 5px;
+}
+.header-right img:hover ~ .header-tip {
+  visibility: visible;
+}
+.header-tip {
+  position: absolute;
+  background-color: #364250;
+  color: #fff;
+  border-radius: 5px;
+  top: 36px;
+  font-size: 14px;
+  padding: 8px;
+  left: 10px;
+  transform: translateX(-50%);
+  width: 120px;
+  visibility: hidden;
+}
+.header-tip > i {
+  position: absolute;
+  top: -8px;
+  color: #364250;
+  left: 50%;
+}
+/* 顶部右侧样式结束 */
 /* 顶部样式结束 */
 
 /* logo style start */
 .logo {
   height: 120px;
   width: 96%;
-  margin: 10px auto;
-  border: 1px solid red;
+  margin: 0px auto;
 }
 .logo-left {
-  /* margin-top:10px ; */
   width: 300px;
   height: 120px;
   float: left;
-  border: 1px solid red;
+}
+.logo-left > img {
+  width: 220px;
+  margin: 20px 10px;
 }
 .logo-right {
   /* margin-top:10px; */
   width: 400px;
   height: 120px;
   float: right;
-  border: 1px solid red;
+  padding: 40px 0;
+}
+.logo-right > img {
+  width: 100%;
 }
 /* logo style end */
 
@@ -173,11 +295,8 @@ a {
 .content-wrap {
   width: 100%;
   height: 660px;
-  /* border: 1px solid red; */
   background-color: #f4f4f4;
-  /* position: relative; */
   padding: 20px 0px 50px;
-  /* margin-bottom: 20px; */
 }
 .content {
   width: 96%;
@@ -222,29 +341,108 @@ a {
   border: 1px solid red;
   float: left;
 }
+
+/* 内容填充样式 开始 */
 .content-body > .content-main {
   width: calc(100% - 290px);
   height: 480px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   float: right;
 }
 
 .content-main > div {
   width: 100%;
   height: 49%;
-  border: 1px solid lightblue;
+  /* border: 1px solid lightblue; */
 }
 .content-main > div:first-child {
   margin-bottom: 1%;
 }
 
-.content-main > div > div {
-  width: 23%;
+.content-box {
+  width: 24%;
   height: 100%;
-  border: 1px solid red;
-  margin-left: 2%;
+  /* border: 1px solid red; */
+  margin-left: 1%;
+  float: left;
+  padding: 5px;
+  position: relative;
+}
+
+.content-box > div:first-child {
+  position: absolute;
+  border: 2px solid #fff;
+  border-radius: 18px;
+  background-color: #9552e8;
+  color: #fff;
+  font-size: 12px;
+  padding: 3px 8px;
+  top: 10px;
+  left: -8px;
+}
+.content-box > a > div {
+  color: #1c1f21;
+  font-size: 16px;
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 24px;
+  height: 46px;
+}
+.content-box > a > div:hover{
+  color: red;
+}
+.content-box > a > img {
+  width: 206px;
+  border-radius: 5px;
+}
+.content-box-desc {
+  color: #8492a6;
+  font-size: 12px;
+  margin-top: 8px;
+}
+/* 清除浮动 设置父元素为 BFC */
+.desc-top {
+  overflow: auto;
+}
+.desc-top > div {
+  float: left;
+  margin-right: 8px;
+}
+.desc-top > div:first-child {
+  background-color: #66a9f0;
+  color: #ffffff;
+  border-radius: 3px;
+  padding: 1px 3px;
+}
+.desc-top > div:nth-child(3) > i {
   float: left;
 }
+.desc-top > div:last-child {
+  float: right;
+  margin-right: 0;
+}
+.desc-top > div:last-child > i {
+  color: #fd9927;
+  margin-left: -4px;
+  font-size: 12px;
+}
+
+.desc-bottom {
+  margin-top: 8px;
+}
+.desc-bottom > div:first-child {
+  float: left;
+}
+.desc-bottom > div:last-child {
+  float: right;
+  color: #fff;
+  background-color: #f67379;
+  border-radius: 3px;
+  padding: 0 3px;
+}
+/* 内容填充样式结束 */
+
 /* content style end */
 
 /* footer style start */
@@ -259,13 +457,11 @@ a {
   width: 96%;
   height: 240px;
   margin: 0 auto;
-  /* border: 1px solid red; */
 }
 .footer-logo {
   width: 450px;
   height: 100%;
   float: left;
-  /* border:1px solid blue; */
   position: relative;
 }
 .footer-logo > img {
@@ -288,18 +484,16 @@ a {
   height: 100%;
   float: left;
   padding-top: 50px;
-  /* border: 1px solid lightblue; */
 }
 .main-center > div {
   float: left;
   margin-left: 80px;
   text-align: center;
-  /* border: 1px solid red; */
 }
 .main-center h3 {
   font-size: 16px;
   /* 设置字间距 */
-  letter-spacing: 5px; 
+  letter-spacing: 5px;
   border-bottom: 1px solid #1899de;
   padding-bottom: 10px;
   margin-bottom: 20px;
