@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>渐变练习</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+            border: 1px solid #000;
+        }
+        /* 线性渐变 linear-gradient
+            background:linear-gradient(direction,color-stop1,color-stop2,...)
+            drection  大致表示方向向下、向上、向左、向右，对角方向
+                      取值可以是英文 、角度值
+
+         */
+        .linear-gradient-box{
+            /* background-image: linear-gradient(lightblue,pink); */
+            /* background: linear-gradient(lightblue,pink); */
+            /* background: linear-gradient(to top,lightblue,pink); */
+            /* background: linear-gradient(to left,lightblue,pink); */
+            /* background: linear-gradient(to left top,lightblue,pink); */
+            /* 0度相当于 to top,想象时钟，0 点在最上方 90 在最右边 180在最下方 -90 在最左边*/
+            /* background: linear-gradient(0deg,lightblue,pink);  */
+              /* 180度相当于 to top,想象时钟，0 点在最上方 90 在最右边 180在最下方 -90 在最左边*/
+            /* background: linear-gradient(180deg,lightblue,pink);  */
+            /* 45度相当于 to right top,0 点在最上方 90 在最右边 180在最下方 -90 在最左边 */
+            /* background: linear-gradient(45deg,lightblue,pink);  */
+            /* -45 度相当于 left top ,0 点在最上方 90 在最右边 180在最下方 -90 在最左边*/
+            background: linear-gradient(-45deg,lightblue 20%,pink 50%); 
+        }
+
+        /* 径向渐变 radial-gradient
+        background:radial-gradient(center positon,shape <extent-keyword>,size,color-stop1,color-stop2,....)
+        默认，渐变的中心是 center（表示在中心点）,shape默认值为 ellipse(椭圆)
+        
+        中心点位置 语法为（at x,y）表示以左上角为原点的坐标系，默认值为 center
+        shape 渐变的形状 可取值为 circle,ellipse，默认为 ellipse(椭圆)
+        extent-keyword 描述边缘轮廓的具体位置,也相当于大小了，可取值：
+            closest-side    最近边
+            closest-corner  最近角
+            farthest-side   最远边
+            farthest-corner 最远角
+
+            
+         */
+
+        .radial-gradient-box{
+            /* background: radial-gradient(lightblue 0%,pink 100%); */
+            /* background: radial-gradient(circle at center,#fff 0%,transparent 10%,black 80%); */
+            background-image: radial-gradient(circle closest-corner at 20% 20% ,red 0%,yellow 50%, green 100%);
+        } 
+    </style>
+</head>
+<body>
+    <!-- 线性渐变 -->
+     <div class="linear-gradient-box"></div>
+     <div class="radial-gradient-box"></div>
+
+     
+</body>
+</html>

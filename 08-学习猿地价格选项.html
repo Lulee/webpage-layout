@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>价格选项卡</title>
+    <style>
+        #price-box {
+            border-radius: 5px;
+           float:left;
+           position: relative;
+            
+        }
+
+        #price-box > div {
+            width:100px;
+            height:50px;
+            float: left;
+            line-height: 50px;
+            text-align: center;
+           
+        }
+        #price-box > div:hover>.card{
+            visibility: visible;
+        }
+
+        .permanent {
+            background:#ff6759;
+            border-top-left-radius: 5px;
+        }
+
+        .combination {
+            background: #00a86f;
+        }
+
+        .vip {
+            background: #DC2249;
+            border-top-right-radius: 5px;
+        }
+        .card{
+            position: absolute;
+            width:300px;
+            border-radius:0 0 5px 5px ;
+            visibility: hidden;
+            left:0;
+        }
+        .permanent>.card{
+            background: linear-gradient(50deg, #ff6759 0, #ff6759 100%);
+        }
+        .combination>.card{
+            background: linear-gradient(50deg, #00a86f 0, #007c52 100%);
+           
+        }
+        .vip>.card{
+            background: linear-gradient(50deg, #ff3b64 0, #c00029 100%)
+        }
+     
+        .card>span:first-child{
+            font-size: 26px;
+            font-weight: bold;
+            color: #ffffff;
+            float:left; 
+            margin-left:20px;
+        }   
+        .card>span:last-child{
+            width: 50px;
+            height:100px;
+            background-color: #fff;
+            border-radius: 5px;
+            padding:3px 5px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="price-box">
+        <div class="permanent">
+            永久
+            <div class="card">
+                <span>￥1024元</span>
+                <span>立即购买</span>
+            </div>
+        </div>
+        <div class="combination">
+            组合
+            <div class="card">
+                <span>￥2048元</span>
+                <span>立即购买</span>
+            </div>
+        </div>
+        <div class="vip">
+            vip
+            <div class="card">
+                <span>￥4096元</span>
+                <span>立即购买</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

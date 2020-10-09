@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浏览器前缀</title>
+    <style>
+        div{
+            /* 实现字体镂空 只有 webkit 内核实现了*/
+            /* 在实际开发中，若该属性处于草案阶段，若各浏览器厂商都支持，一般添加所要兼容的浏览器前缀（假如支持），然后再写标准的属性，如： */
+            -webkit-text-stroke: 1px red; 
+            color:transparent;
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div>好好学习，天天向上！</div>
+    
+</body>
+</html>

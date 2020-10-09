@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation-轮播图实现</title>
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #banner {
+            width: 100vw;
+            height: 400px;
+            margin: 50px auto;
+            /* 只显示一张图片，其余隐藏 */
+            overflow: hidden;
+            position: relative;
+        }
+
+        #box {
+            width: calc(100vw * 6);
+        }
+
+        img {
+            width: 100vw;
+            height: 400px;
+            float: left;
+        }
+
+        .lunbo {
+            animation: lunbo 10s ease-out infinite;
+        }
+
+        @keyframes lunbo {
+            0% {
+                margin-left: 0;
+            }
+
+            20% {
+                margin-left: -100vw;
+            }
+
+            40% {
+                margin-left: -200vw;
+            }
+
+            60% {
+                margin-left: -300vw;
+            }
+
+            80% {
+                margin-left: -400vw;
+            }
+
+            100% {
+                margin-left: -500vw;
+            }
+        }
+
+        #box:hover {
+            animation-play-state: paused;
+        }
+
+        .pointer {
+            border-top: 5px solid #FFF;
+            position: absolute;
+            top:380px;
+            left:50%;
+            width:35px;
+            opacity: .6;
+            /* box-shadow: 0 -3px 3px #fff; */
+         
+        }
+        .pointer:hover {
+            opacity: 1;
+        }
+        
+        /* 使用的是绝对地位，所以需要一个个确定位置 */
+        #pointer2{
+           left: calc(50% + 50px);
+        }
+        #pointer3{
+           left: calc(50% + 100px);
+        }
+        #pointer4{
+           left: calc(50% + 150px);
+        }
+        #pointer5{
+           left: calc(50% + 200px);
+        }
+       
+        #pointer1:hover ~ #box{
+            animation:mv1 .5s ease-out forwards;
+        }
+        #pointer2:hover ~ #box{
+            animation:mv2 .5s ease-out forwards;
+        }
+        #pointer3:hover ~ #box{
+            animation:mv3 .5s ease-out forwards;
+        }
+        #pointer4:hover ~ #box{
+            animation:mv4 .5s ease-out forwards;
+        }
+        #pointer5:hover ~ #box{
+            animation:mv5 .5s ease-out forwards;
+        }
+        
+        @keyframes mv1 {
+            100% {
+                margin-left: 0;
+            }
+        }
+
+        @keyframes mv2 {
+            100% {
+                margin-left: -100vw;
+            }
+        }
+
+        @keyframes mv3 {
+            100% {
+                margin-left: -200vw;
+            }
+        }
+
+        @keyframes mv4 {
+            100% {
+                margin-left: -300vw;
+            }
+        }
+
+        @keyframes mv5 {
+            100% {
+                margin-left: -400vw;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="banner">
+        
+        <!-- css 选择器只能从上往下，从外往里找到标签，所以为了 hover时能选中下面的 box，只能和 box 是兄弟关系 -->
+        <span id="pointer1" class="pointer"></span>
+        <span id="pointer2" class="pointer"></span>
+        <span id="pointer3" class="pointer"></span>
+        <span id="pointer4" class="pointer"></span>
+        <span id="pointer5" class="pointer"></span>
+
+        <div id="box" class="lunbo">
+            <img src="./images/banner1.png" alt="">
+            <img src="./images/banner2.jpg" alt="">
+            <img src="./images/banner3.jpg" alt="">
+            <img src="./images/banner4.jpg" alt="">
+            <img src="./images/banner5.jpg" alt="">
+            <!--将第一张放到最后， 实现无缝转换 -->
+            <img src="./images/banner1.png" alt="">
+        </div>
+    </div>
+
+</body>
+
+</html>
